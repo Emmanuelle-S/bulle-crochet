@@ -24,17 +24,25 @@ function getParam(name) {
 
 async function hydrateArticle() {
   const container = document.querySelector("#article");
-  if (!container) return; // on n'est pas sur la page de détail
+  if (!container) return;
 
   const slug = getParam("slug");
-  // charge les listes (tu peux ne charger que articles si tu veux)
-  const [articles, patterns] = await Promise.all([
-    loadJSON("data/articles.json"),
-    loadJSON("data/patterns.json"),
-  ]);
-  const all = [...articles, ...patterns];
 
-  const item = all.find((it) => slugify(it.title) === slug);
+  let articles = [],
+    patterns = [];
+  try {
+    [articles, patterns] = await Promise.all([
+      loadJSON("data/articles.json"),
+      loadJSON("data/patterns.json"),
+    ]);
+  } catch (e) {
+    container.innerHTML = `<p>Impossible de charger les données.</p>`;
+    return;
+  }
+
+  const item = [...articles, ...patterns].find(
+    (it) => slugify(it.title) === slug
+  );
 
   if (!item) {
     container.innerHTML = `
@@ -43,16 +51,38 @@ async function hydrateArticle() {
     return;
   }
 
+  // --- SEO par page
+  document.title = `${item.title} — Bulle Crochet`;
+  const desc = item.excerpt || "Astuces & patrons crochet — Bulle Crochet.";
+  let mdesc = document.querySelector('meta[name="description"]');
+  if (!mdesc) {
+    mdesc = document.createElement("meta");
+    mdesc.setAttribute("name", "description");
+    document.head.appendChild(mdesc);
+  }
+  mdesc.setAttribute("content", desc);
+
+  // Canonical
+  let canon = document.querySelector('link[rel="canonical"]');
+  if (!canon) {
+    canon = document.createElement("link");
+    canon.rel = "canonical";
+    document.head.appendChild(canon);
+  }
+  canon.href = location.href;
+
+  // URLs d'image (compatibles sous-dossier GitHub Pages)
+  const src800 = item.image || "assets/placeholder.webp";
+  const src1600 = item.cover || src800;
+  const absImg = new URL(src1600, location.href).href;
+
+  // JSON-LD Article
   const ld = {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: item.title,
-    description: item.excerpt || "",
-    image: [
-      item.cover || item.image
-        ? location.origin + "/" + (item.cover || item.image)
-        : "",
-    ],
+    description: desc,
+    image: absImg ? [absImg] : [],
     author: { "@type": "Person", name: "Bulle Crochet" },
     keywords: (item.tags || []).join(", "),
   };
@@ -61,34 +91,37 @@ async function hydrateArticle() {
   ldScript.textContent = JSON.stringify(ld);
   document.head.appendChild(ldScript);
 
+  // Rendu
   container.innerHTML = `
-  <article class="post">
-    <img
-      class="post-cover"
-      src="${item.image || "assets/placeholder.webp"}"
-      srcset="${item.image || "assets/placeholder.webp"} 800w, ${
-    item.cover || item.image || "assets/placeholder.webp"
-  } 1600w"
-      sizes="(min-width: 1100px) 900px, 100vw"
-      alt="${item.alt || item.title}"
-      width="1600" height="900"
-      loading="eager" decoding="async">
-    <h1>${item.title}</h1>
-    <div class="meta-row">
-      ${item.level ? `<span class="meta-item">🧶 ${item.level}</span>` : ""}
-      ${item.time ? `<span class="meta-item">⏱ ${item.time}</span>` : ""}
-      ${item.type ? `<span class="meta-item">🏷 ${item.type}</span>` : ""}
-    </div>
-    <div class="prose">
-      ${item.content || `<p>${item.excerpt || ""}</p>`}
-    </div>
-    <div class="tags">${(item.tags || [])
-      .map((t) => `<span class="tag">${t}</span>`)
-      .join("")}</div>
-    <p class="back"><a href="${
-      item.type === "Patron" ? "patrons.html" : "articles.html"
-    }">← Retour</a></p>
-  </article>`;
+    <article class="post">
+      ${
+        src800
+          ? `
+        <img class="post-cover"
+             src="${src800}"
+             srcset="${src800} 800w, ${src1600} 1600w"
+             sizes="(min-width: 1100px) 900px, 100vw"
+             alt="${item.alt || item.title}"
+             width="1600" height="900"
+             loading="eager" decoding="async">`
+          : ""
+      }
+      <h1>${item.title}</h1>
+      <div class="meta-row">
+        ${item.level ? `<span class="meta-item">🧶 ${item.level}</span>` : ""}
+        ${item.time ? `<span class="meta-item">⏱ ${item.time}</span>` : ""}
+        ${item.type ? `<span class="meta-item">🏷 ${item.type}</span>` : ""}
+      </div>
+      <div class="prose">
+        ${item.content || `<p>${item.excerpt || ""}</p>`}
+      </div>
+      <div class="tags">${(item.tags || [])
+        .map((t) => `<span class="tag">${t}</span>`)
+        .join("")}</div>
+      <p class="back"><a href="${
+        item.type === "Patron" ? "patrons.html" : "articles.html"
+      }">← Retour</a></p>
+    </article>`;
 }
 
 function toCard(item) {
