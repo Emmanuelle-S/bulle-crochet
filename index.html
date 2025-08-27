@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Bulle Crochet — astuces, patrons et entraide bienveillante pour tous niveaux.">
+    <title>Bulle Crochet — le crochet qui fait du bien</title>
+    <meta
+      name="description"
+      content="Blog d’entraide au crochet : astuces, patrons, et safeplace bienveillant pour tous niveaux."
+    />
+    <!-- (optionnel) Open Graph -->
+    <meta
+      property="og:title"
+      content="Bulle Crochet — le crochet qui fait du bien"
+    />
+    <meta
+      property="og:description"
+      content="Astuces, patrons, entraide et douceur au crochet."
+    />
+    <link rel="icon" href="assets/logo-bulle.svg" type="image/svg+xml">
+
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <header class="site-header gradient">
+      <div class="container header-inner">
+        <a class="brand" href="index.html">
+          <img src="assets/logo-bulle.svg" alt="" class="brand-logo" />
+          <span class="brand-name">Bulle Crochet</span>
+        </a>
+        <nav class="site-nav" aria-label="Navigation principale">
+          <a href="index.html" class="active">Accueil</a>
+          <a href="articles.html">Articles</a>
+          <a href="patrons.html">Patrons</a>
+          <a href="apropos.html">À propos</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="hero hero-soft">
+        <picture>
+          <source srcset="assets/hero-placeholder.webp" type="image/webp" />
+          <img
+            class="hero-img"
+            src="assets/hero-placeholder.webp"
+            alt="Mains en train de crocheter avec un fil rose pâle"
+            width="1600"
+            height="900"
+            fetchpriority="high"
+            decoding="async"
+          />
+        </picture>
+
+        <div class="hero-inner">
+          <div class="hero-cta">
+  <a class="btn primary" href="patrons.html">Voir les patrons</a>
+  <a class="btn ghost" href="articles.html">Astuces débutant</a>
+</div>
+          <h1>Bienvenue sur Bulle Crochet</h1>
+          <p>
+            Des mailles, des pelotes et une bonne dose de feel-good : on partage des patrons, des tips et des coups de cœur laineux. Débutant ou confirmé, viens souffler, tester de nouvelles matières et savourer la fierté du fait-main✨.
+          </p>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="tit-articles">
+        <div class="section-head">
+          <h2 id="tit-articles">Derniers articles</h2>
+          <a
+            class="link"
+            href="articles.html"
+            aria-label="Voir tous les articles"
+            >Tout voir</a
+          >
+        </div>
+        <div id="home-articles" class="card-grid"></div>
+      </section>
+
+      <section class="section" aria-labelledby="tit-patrons">
+        <div class="section-head">
+          <h2 id="tit-patrons">Derniers patrons</h2>
+          <a class="link" href="patrons.html" aria-label="Voir tous les patrons"
+            >Tout voir</a
+          >
+        </div>
+        <div id="home-patrons" class="card-grid"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer gradient">
+      <div class="container footer-inner">
+        <span>© <span id="year"></span></span>
+        <span>Tous droits réservés</span>
+      </div>
+    </footer>
+  </body>
+</html>

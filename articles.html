@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bulle Crochet — le crochet qui fait du bien</title>
+    <meta
+      name="description"
+      content="Blog d’entraide au crochet : astuces, patrons, et safeplace bienveillant pour tous niveaux."
+    />
+    <!-- (optionnel) Open Graph -->
+    <meta
+      property="og:title"
+      content="Bulle Crochet — le crochet qui fait du bien"
+    />
+    <meta
+      property="og:description"
+      content="Astuces, patrons, entraide et douceur au crochet."
+    />
+    <link rel="icon" href="assets/logo-bulle.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <header class="site-header gradient">
+      <div class="container header-inner">
+        <a class="brand" href="index.html">
+          <img src="assets/logo-bulle.svg" alt="" class="brand-logo" />
+          <span class="brand-name">Bulle Crochet</span>
+        </a>
+        <nav class="site-nav" aria-label="Navigation principale">
+          <a href="index.html">Accueil</a>
+          <a href="articles.html" class="active" aria-current="page"
+            >Articles</a
+          >
+          <a href="patrons.html">Patrons</a>
+          <a href="apropos.html">À propos</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="section">
+        <div class="section-head">
+          <h1>Derniers articles</h1>
+          <div class="filters">
+            <input
+              id="search-articles"
+              type="search"
+              placeholder="Rechercher un article… (titre, tag)"
+              aria-label="Rechercher"
+            />
+          </div>
+        </div>
+        <div id="list-articles" class="card-grid"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer gradient">
+      <div class="container footer-inner">
+        <span>© <span id="year"></span></span>
+        <span>Tous droits réservés</span>
+      </div>
+    </footer>
+  </body>
+</html>

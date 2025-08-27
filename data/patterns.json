@@ -1,0 +1,66 @@
+[
+  {
+    "title": "Patron gratuit : petit cœur en coton",
+    "excerpt": "Un mini-projet rapide et doux à offrir.",
+    "level": "Débutant",
+    "time": "45 min",
+    "type": "Patron",
+    "tags": [
+      "Amigurumi",
+      "Coton",
+      "Gratuit"
+    ]
+  },
+  {
+    "title": "Bandeau d’été léger",
+    "excerpt": "Parfait pour les journées ensoleillées.",
+    "level": "Débutant",
+    "time": "1 h",
+    "type": "Patron",
+    "tags": [
+      "Accessoires"
+    ]
+  },
+  {
+    "title": "Panier de rangement",
+    "excerpt": "Solide et esthétique, idéal pour organiser.",
+    "level": "Intermédiaire",
+    "time": "2 h",
+    "type": "Patron",
+    "tags": [
+      "Maison"
+    ]
+  },
+  {
+    "title": "Mini pieuvre apaisante",
+    "excerpt": "Classique indémodable pour les tout-petits.",
+    "level": "Débutant",
+    "time": "1 h 20",
+    "type": "Patron",
+    "tags": [
+      "Amigurumi",
+      "Bébé"
+    ]
+  },
+  {
+    "title": "Pochette à crochets",
+    "excerpt": "Rangez tout joliment avec ce patron pratique.",
+    "level": "Intermédiaire",
+    "time": "1 h 30",
+    "type": "Patron",
+    "tags": [
+      "Accessoires",
+      "Organisation"
+    ]
+  },
+  {
+    "title": "Coussin cœur géant",
+    "excerpt": "Décor cocooning pour canapé.",
+    "level": "Intermédiaire",
+    "time": "3 h",
+    "type": "Patron",
+    "tags": [
+      "Déco"
+    ]
+  }
+]
