@@ -1,7 +1,6 @@
 <p align="center">
-  <img src="assets/readme-banner.svg" alt="Bulle Crochet — le crochet qui fait du bien" width="100%">
+  <img src="assets/readme-banner.svg?v=2" alt="Bulle Crochet — le crochet qui fait du bien" width="100%">
 </p>
-
 
 
 # Bulle Crochet — le crochet qui fait du bien 💗
