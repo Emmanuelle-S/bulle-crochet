@@ -218,3 +218,21 @@ async function hydrateLists() {
 hydrateHome();
 hydrateLists();
 hydrateArticle();
+
+// Ombre du header quand on scrolle
+(function(){
+  const setShadow = () => {
+    document.body.classList.toggle('is-scrolled', window.scrollY > 4);
+  };
+  setShadow();
+  window.addEventListener('scroll', setShadow, { passive: true });
+})();
+
+// Mesurer la hauteur réelle du header (utile pour scroll-margin-top)
+(function(){
+  const header = document.querySelector('.site-header');
+  if(!header) return;
+  const setH = () => document.documentElement.style.setProperty('--header-h', header.offsetHeight + 'px');
+  setH();
+  window.addEventListener('resize', setH);
+})();

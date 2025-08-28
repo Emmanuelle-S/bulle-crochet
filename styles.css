@@ -21,6 +21,8 @@
   --shadow:0 10px 30px rgba(0,0,0,.08);
 }
 
+:root{ --header-h: 56px; }
+
 *{box-sizing:border-box}
 html,body{margin:0;padding:0}
 body{
@@ -30,13 +32,35 @@ body{
   line-height:1.6;
 }
 
+body.is-scrolled .site-header {
+  box-shadow: 0 6px 20px rgba(0,0,0,.06);
+}
+
 .container{width:min(1100px, 92%); margin-inline:auto}
 
 /* Header / Footer */
-.site-header.gradient, .site-footer.gradient{
-  background:linear-gradient(90deg, #d6b1be, #fff3dc, #c78399);
-  box-shadow:var(--shadow);
+/* ton header existant + sticky */
+.site-header.gradient{
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  /* même gradient mais un peu translucide pour le blur */
+  background: linear-gradient(
+  90deg,
+  rgba(214, 177, 190, 0.4),
+  rgba(255, 243, 220, 0.4),
+  rgba(199, 131, 153, 0.4)
+);
+
+  backdrop-filter: saturate(1.1) blur(8px);
+  -webkit-backdrop-filter: saturate(1.1) blur(8px); /* iOS */
+  transition: box-shadow .18s ease, background-color .18s ease;
 }
+/* garde une hauteur confortable, utile pour calculs d’ancre */
+.header-inner{ min-height: var(--header-h); }
+/* quand on navigue vers un #ancre, que le header ne la cache pas */
+:where(h1,h2,h3,h4,h5,h6)[id]{
+  scroll-margin-top: calc(var(--header-h) + 12px);}
 .header-inner, .footer-inner{display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:.75rem 0}
 .brand{display:flex; align-items:center; gap:.5rem; text-decoration:none; color:inherit}
 .brand-mark{display:inline-grid; place-items:center; width:28px; height:28px; border-radius:50%; background:var(--magenta-doux); box-shadow:var(--shadow)}
