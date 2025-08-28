@@ -1,8 +1,3 @@
-<p align="center">
-  <img src="assets/readme-banner.svg?v=2" alt="Bulle Crochet — le crochet qui fait du bien" width="100%">
-</p>
-
-
 # Bulle Crochet — le crochet qui fait du bien 💗
 
 **Bulle Crochet** est un espace doux et bienveillant pour (re)découvrir le crochet, progresser à son rythme et partager la joie du fait-main.  
