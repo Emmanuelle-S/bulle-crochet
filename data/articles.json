@@ -1,17 +1,17 @@
 [
   {
     "title": "Débuter le crochet : 5 erreurs à éviter",
+    "slug": "erreurs-debutant",
     "excerpt": "Tenue du crochet, tension du fil, choix de la taille…",
-    "level": "Débutant",
+    "type": "Article",
     "tags": ["Débutant", "Technique", "Astuces"],
     "image": "assets/vignettes_2.webp",
     "cover": "assets/vignettes_2_1600.webp",
-    "alt": "Main tenant un crochet avec fil rose",
-    "content": "<h2>Les 5 erreurs du débutant au crochet</h2><p>Commencer, c’est déjà super. Pour éviter les frustrations, voici 5 pièges classiques — et surtout comment les contourner en douceur.</p><details open><summary><strong>1) Se lancer direct dans un gros projet</strong></summary><p><strong>Le piège :</strong> plaid XXL, pull complexe, amigurumi géant… c’est tentant.</p><p><strong>Pourquoi ça coince :</strong> beaucoup d’heures, de techniques et d’assemblage. On se perd, on défait, on se décourage.</p><p><strong>La solution :</strong> démarrer par des mini projets finissables en 1 à 3 séances : sous-verres, chouchous, bandeau, petit cœur, panier simple.</p></details><details open><summary><strong>2) Ignorer l’échantillon et les tailles</strong></summary><p><strong>Le piège :</strong> suivre un patron mais finir trop grand ou trop petit.</p><p><strong>Pourquoi ça coince :</strong> la taille dépend de ta tension et de la grosseur du fil/crochet.</p><p><strong>La solution :</strong> faire un carré test de 10 × 10 cm au point principal, mesurer, puis ajuster la taille du crochet jusqu’à obtenir les bonnes mesures.</p></details><details open><summary><strong>3) Sous-estimer l’importance du crochet</strong></summary><p><strong>Le piège :</strong> prendre n’importe quel crochet, trop fin ou trop gros, ou inconfortable.</p><p><strong>Pourquoi ça coince :</strong> douleurs aux mains, points irréguliers, rendu trop serré ou trop lâche.</p><p><strong>La solution :</strong> respecter la taille conseillée sur la pelote ou le patron, tester une taille en dessous et au-dessus, choisir une poignée confortable.</p></details><details open><summary><strong>4) Ne pas compter ses mailles et oublier les marqueurs</strong></summary><p><strong>Le piège :</strong> crocheter au feeling.</p><p><strong>Pourquoi ça coince :</strong> on ajoute ou on perd des mailles sans s’en rendre compte, l’ouvrage se déforme.</p><p><strong>La solution :</strong> compter à chaque rang/tour, poser un marqueur au début de tour, vérifier régulièrement le nombre de mailles indiqué.</p></details><details open><summary><strong>5) Acheter trop de matériel tout de suite</strong></summary><p><strong>Le piège :</strong> paniers pleins de pelotes et d’accessoires inutilisés.</p><p><strong>Pourquoi ça coince :</strong> budget, stockage, on s’éparpille.</p><p><strong>La solution :</strong> un kit minimal suffit : 2 tailles de crochet (ex. 3,5 et 4 mm), une paire de ciseaux, une aiguille à laine, quelques marqueurs, 2 pelotes d’un fil doux qui glisse bien.</p></details><h2>Checklist rapide avant de commencer</h2><ul><li>Projet court choisi et temps estimé</li><li>Échantillon testé et taille confirmée</li><li>Compter les mailles, marqueur posé</li><li>Pauses régulières, mains détendues</li><li>Noter la taille de crochet et le rang atteint</li></ul>"
-
+    "alt": "Main tenant un crochet avec fil rose"
   },
   {
     "title": "Topo du débutant sur la laine",
+    "slug": "laine-debutant",
     "excerpt": "laine, acrylique, choix de la taille…",
     "type": "Conseils",
     "tags": ["Débutant", "Laine", "Astuces"],
@@ -21,19 +21,18 @@
   {
     "title": "Les meilleurs fils pour l’été",
     "excerpt": "Coton, bambou, lin : tour d’horizon des matières respirantes.",
-    "level": "Tous niveaux",
+    "type": "Article",
+    "slug": "fil-ete",
     "image": "assets/vignettes_4.webp",
     "cover": "assets/vignettes_4_1600.webp",
     "alt": "Main tenant un crochet avec fil rose",
-    "tags": [
-      "Saisonnier",
-      "Matières"
-    ]
+    "tags": ["Saisonnier", "Matières"]
   },
   {
     "title": "Choisir son crochet",
     "excerpt": "Connaitre les crochets pour mieux lmes utiliser",
-    "level": "Tous niveaux",
+    "slug": "debutant-crochet",
+    "type": "Article",
     "image": "assets/vignettes_6.webp",
     "cover": "assets/vignettes_6_1600.webp",
     "alt": "Main tenant un crochet avec fil rose",
@@ -42,22 +41,19 @@
   {
     "title": "Mes premiers projets",
     "excerpt": "Une fois les points de base maitrisés, place à la créativité ! ",
-    "level": "Débutant",
+    "slug": "premier-projet",
+    "type": "Article",
     "image": "assets/vignettes.webp",
     "cover": "assets/vignettes_1600.webp",
-    "tags": [
-      "Projet",
-      "Débutant"
-    ]
+    "tags": ["Projet", "Débutant"]
   },
   {
     "title": "Les meilleurs accessoires qui accompagneront tes séances",
     "excerpt": "Ce que j’utilise au quotidien et pourquoi.",
-    "level": "Tous niveaux",
+    "slug": "accessoires-crochet",
+    "type": "Article",
     "image": "assets/vignettes_8.webp",
     "cover": "assets/vignettes_8_1600.webp",
-    "tags": [
-      "Outils"
-    ]
+    "tags": ["Outils"]
   }
 ]

@@ -22,45 +22,40 @@
     <script defer src="script.js"></script>
   </head>
   <body>
-    <header class="site-header gradient ">
-      <div class="container header-inner">
-        <a class="brand" href="index.html">
-          <img src="assets/logo-bulle.svg" alt="" class="brand-logo" />
-          <span class="brand-name">Bulle Crochet</span>
-        </a>
-        <nav class="site-nav" aria-label="Navigation principale">
-          <a href="index.html">Accueil</a>
-          <a href="articles.html" class="active" aria-current="page"
-            >Articles</a
-          >
-          <a href="patrons.html">Patrons</a>
-          <a href="apropos.html">À propos</a>
-        </nav>
-      </div>
-    </header>
+  <header class="site-header gradient">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">♡</span>
+        <span class="brand-name">Bulle Crochet</span>
+      </a>
+      <nav class="site-nav" aria-label="Navigation principale">
+        <a href="index.html">Accueil</a>
+        <a href="articles.html">Articles</a>
+        <a href="patrons.html">Patrons</a>
+        <a href="apropos.html">À propos</a>
+      </nav>
+    </div>
+  </header>
 
-    <main class="container">
-      <section class="section">
-        <div class="section-head">
-          <h1>Derniers articles</h1>
-          <div class="filters">
-            <input
-              id="search-articles"
-              type="search"
-              placeholder="Rechercher un article… (titre, tag)"
-              aria-label="Rechercher"
-            />
-          </div>
-        </div>
-        <div id="list-articles" class="card-grid"></div>
-      </section>
-    </main>
+  <main class="container">
+    <section class="section section-article">
+      <div id="article"><!-- hydraté par script.js --></div>
+    </section>
 
-    <footer class="site-footer gradient">
-      <div class="container footer-inner">
-        <span>© <span id="year"></span></span>
-        <span>Tous droits réservés</span>
+    <!-- Optionnel : articles similaires -->
+    <section class="section" aria-labelledby="tit-sim">
+      <div class="section-head">
+        <h2 id="tit-sim">Articles similaires</h2>
       </div>
-    </footer>
-  </body>
+      <div id="related" class="card-grid"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer gradient">
+    <div class="container footer-inner">
+      <span>© <span id="year"></span></span>
+      <span>Tous droits réservés</span>
+    </div>
+  </footer>
+</body>
 </html>
